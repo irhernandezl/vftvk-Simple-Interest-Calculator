@@ -6,27 +6,51 @@
         <title> Simple Interest Calculator </title>
         <style>
         .maindiv {
-            background-color: tomato;
-            color: white;
-            border: 2px solid black;
-            margin: 20px;
+            background-color: white;
+            color: black;
+            width:300px;
             padding: 20px;
+            border-radius: 25px;
+            align-content: center;
         }
         </style>
+        <script>
+            addEventListener('load',begin,false);
+
+            var principal="principal";
+            var rate="rate";
+            var years="years";
+            var interest=principal * years * rate / 100;
+
+            function begin()
+            {
+            document.getElementById('rate').addEventListener('change',changerate,false);
+            }
+
+            function changerate()
+            {    
+            document.getElementById('Rate').innerHTML=document.getElementById('rate').value;
+            }
+
+        </script>
         </head>
         <body>
         </body>
-    <div class="maindiv">
-        <h1>Simple Interest Calculator</h1>
+    <div class="maindiv"> 
+        <h1 style="color:grey;" font-style="verdana";>Simple Interest Calculator</h1>
 
         Amount <input type="number"  id="principal">  <br/>
-        Rate <input type="range" id="rate" min=1 step="10.25" max=20 text="10.25%"> <span > </span> <br/> 
+        Rate <input type="range" id="rate" min="1" max="20" > 
+        <span id="Rate" >0</span> <br/> 
         No. of Years <input type="number"  id="years" min=1 max=10>  <br/>
-        Interest : <span id="result"></span><br>
+        Interest : <span id="result"></span>
+        <br>
 
         <button onclick="compute()">Compute Interest</button>
         <span id="result"></span><br>
      </div>
      <footer>Copy right</footer>
 </html>
+
+
 
